@@ -2,7 +2,7 @@
 
 LOG_DIR="/Users/rexoghenerobo/Downloads/THESIS/logs"
 ERROR_PATTERNS=("ERROR" "FATAL" "CRITICAL")
-REPORT_FILE="/Users/rexoghenerobo/Downloads/THESIS/logs/log_analysis_report.txt"
+REPORT_FILE="/Users/rexoghenerobo/Downloads/THESIS/linux-automation-toolkit/logs/log_analysis_report.txt"
 
 
 echo "analysing log files" > "$REPORT_FILE"
