@@ -1,0 +1,8 @@
+{
+    "backup_directories": ["/etc/apt"],
+    "backup_destination": "backups",
+    "log_file": "logs/toolkit.log",
+    "log_level": "INFO",
+    "cron_schedule": "0 2 * * *",
+    "cron_command": "cd ~/linux-automation-toolkit && /usr/bin/python3 main.py --auto"
+}
