@@ -5,3 +5,6 @@ __pycache__/
 # Toolkit-generated output
 backups/
 logs/toolkit.log
+.coverage
+.pytest_cache/
+__pycache__/
