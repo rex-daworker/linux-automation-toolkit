@@ -1,4 +1,7 @@
-"""main.py - entry point. Flow: backup -> update -> log. Supports manual and scheduled runs."""
+"""main.py - entry point.
+
+Flow: backup -> update -> log. Supports manual and scheduled runs.
+"""
 import argparse
 import json
 
@@ -26,18 +29,25 @@ def main():
                         config.get("log_level", "INFO"))
 
     if args.schedule:
-        install_cron_job(config["cron_schedule"], config["cron_command"], logger)
+        install_cron_job(
+            config["cron_schedule"], config["cron_command"], logger
+        )
         return
 
     logger.info("=== Linux Automation Toolkit started ===")
 
     if not args.auto:
-        answer = input("This will back up directories and run system updates. Continue? [y/N] ")
+        answer = input(
+            "This will back up directories and run system updates. "
+            "Continue? [y/N] "
+        )
         if answer.strip().lower() != "y":
             logger.info("Run cancelled by user")
             return
 
-    create_backup(config["backup_directories"], config["backup_destination"], logger)
+    create_backup(
+        config["backup_directories"], config["backup_destination"], logger
+    )
     run_update(logger)
     logger.info("=== Toolkit run finished ===")
 

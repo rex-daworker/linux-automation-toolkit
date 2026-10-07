@@ -1,4 +1,4 @@
-"""backup.py - create timestamped backups of important directories before updates."""
+"""backup.py - create timestamped backups before updates."""
 import os
 import shutil
 from datetime import datetime
@@ -15,7 +15,8 @@ def create_backup(directories, destination, logger):
         if not os.path.exists(directory):
             logger.warning(f"Skipping missing directory: {directory}")
             continue
-        target = os.path.join(backup_path, os.path.basename(directory.rstrip("/")))
+        name = os.path.basename(directory.rstrip("/"))
+        target = os.path.join(backup_path, name)
         try:
             shutil.copytree(directory, target, dirs_exist_ok=True)
             logger.info(f"Backed up {directory} -> {target}")

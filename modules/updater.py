@@ -16,7 +16,8 @@ def run_update(logger):
                 logger.info(f"Success: {' '.join(command)}")
             else:
                 logger.error(
-                    f"Command failed (exit {result.returncode}): {' '.join(command)}"
+                    f"Command failed (exit {result.returncode}): "
+                    f"{' '.join(command)}"
                 )
                 logger.error(result.stderr.strip())
                 return False

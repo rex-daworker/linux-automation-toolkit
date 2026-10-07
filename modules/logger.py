@@ -4,7 +4,7 @@ import os
 
 
 def get_logger(log_file="logs/toolkit.log", level="INFO"):
-    """Return a shared logger that writes to both the console and a log file."""
+    """Return a shared logger that writes to the console and a log file."""
     log_dir = os.path.dirname(log_file)
     if log_dir:
         os.makedirs(log_dir, exist_ok=True)
